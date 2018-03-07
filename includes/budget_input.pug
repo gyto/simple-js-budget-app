@@ -1,0 +1,22 @@
+div.container
+  div.row
+    div.col-2
+      select.form_input
+        each condition in ['+', '-']
+          option= condition
+    div.col-6
+      input.form_input(
+        type='text'
+        value=''
+        placeholder='Title'
+      )
+    div.col-3
+      input.form_input(
+        type='text'
+        value=''
+        placeholder='Value'
+      )
+    div.col-1
+      button.form_button
+        i.far.fa-plus-square
+

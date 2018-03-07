@@ -1,0 +1,76 @@
+:root {
+  font-size: 12px;
+  font-family: 'Mina', sans-serif; }
+
+/*
+ *  Color scheme https://coolors.co/f9c80e-5da9e9-12355b-dd3716-0d8433
+ */
+.badge {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 8px 15px;
+  margin-top: 10px;
+  color: white;
+  border-radius: 3px;
+  font-size: 1.3rem; }
+  .badge--income {
+    background-color: #0d8433; }
+  .badge--expenses {
+    background-color: #dd3716; }
+
+.badge__title {
+  flex: 4; }
+
+.badge__number {
+  flex: 3;
+  text-align: right;
+  margin-right: 10px; }
+
+.badge__percentage {
+  flex: 0.5;
+  background-color: rgba(255, 255, 255, 0.12);
+  padding: 3px 6px;
+  border-radius: 2px;
+  font-size: 0.8rem;
+  text-align: center; }
+  .badge__percentage:empty {
+    background: none; }
+
+.main_bg {
+  height: 400px;
+  background-image: url("https://source.unsplash.com/random");
+  background-position-y: center;
+  background-size: cover;
+  display: flex;
+  align-items: center; }
+
+.main_title {
+  font-size: 2.4rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: white;
+  text-align: center;
+  text-shadow: 2px 2px black; }
+
+.main_budget {
+  font-size: 5rem;
+  color: white;
+  text-align: center;
+  text-shadow: 2px 2px black; }
+
+.main_input {
+  background-color: rgba(128, 128, 128, 0.12);
+  padding: 15px 0; }
+
+.form_input {
+  width: 100%;
+  height: 36px;
+  border: 1px solid transparent;
+  padding: 6px 8px;
+  border-radius: 3px; }
+  .form_input:focus {
+    outline: 0;
+    border-color: gray; }
+
+/*# sourceMappingURL=styles.css.map */

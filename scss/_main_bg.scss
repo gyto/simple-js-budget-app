@@ -1,0 +1,26 @@
+.main_bg {
+  height                : 400px;
+  background-image: url("https://source.unsplash.com/random");
+  background-position-y : center;
+  background-size       : cover;
+  display               : flex;
+  align-items           : center;
+}
+.main_title {
+  font-size      : 2.4rem;
+  text-transform : uppercase;
+  letter-spacing : 2px;
+  color          : white;
+  text-align     : center;
+  text-shadow    : 2px 2px black;
+}
+.main_budget {
+  font-size   : 5rem;
+  color       : white;
+  text-align  : center;
+  text-shadow : 2px 2px black;
+}
+.main_input {
+  background-color: rgba(gray, 0.12);
+  padding: 15px 0;
+}
