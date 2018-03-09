@@ -1,6 +1,6 @@
 .main_bg {
   height                : 400px;
-  background-image: url("https://source.unsplash.com/random");
+  background-image      : url("https://source.unsplash.com/random");
   background-position-y : center;
   background-size       : cover;
   display               : flex;
@@ -21,6 +21,7 @@
   text-shadow : 2px 2px black;
 }
 .main_input {
-  background-color: rgba(gray, 0.12);
-  padding: 15px 0;
+  background-color : rgba(gray, 0.12);
+  padding          : 15px 0;
+  border-bottom    : 2px solid rgba(gray, 0.2);
 }

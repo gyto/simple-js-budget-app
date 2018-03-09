@@ -1,11 +1,24 @@
 .form_input {
   width         : 100%;
   height        : 36px;
-  border        : 1px solid transparent;
-  padding       : 6px 8px;
+  border        : 1px solid rgba(gray, 0.5);
+  padding       : 6px 10px;
   border-radius : 3px;
   &:focus {
     outline      : 0;
     border-color : gray;
+  }
+}
+.form_button {
+  width       : 100%;
+  height      : 36px;
+  background  : none;
+  border      : 0;
+  font-size   : 2rem;
+  color       : $red-color;
+  line-height : 1;
+  cursor      : pointer;
+  &:focus {
+    outline : 0;
   }
 }

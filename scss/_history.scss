@@ -1,0 +1,84 @@
+.history {
+  margin-top    : 40px;
+  margin-bottom : 60px;
+}
+.history__title {
+  font-size      : 2rem;
+  margin-bottom  : 15px;
+  text-transform : uppercase;
+  &--income {
+    color : $green-color;
+  }
+  &--expenses {
+    color : $red-color;
+  }
+}
+.history__container {
+  display   : flex;
+  flex-wrap : wrap;
+}
+.history__item {
+  width            : 100%;
+  border-top       : 1px solid rgba(gray, 0.3);
+  display          : flex;
+  font-size        : 1.3rem;
+  position         : relative;
+  background-color : rgba(gray, 0.09);
+  padding          : 10px 15px;
+  &:last-child {
+    border-bottom : 1px solid rgba(gray, 0.3);
+  }
+  &:hover {
+    .history__item_amount {
+      margin-right : 30px;
+    }
+    .history__item_remove {
+      visibility : visible;
+    }
+  }
+}
+.history__item_title {
+  flex : 4;
+}
+.history__item_amount {
+  flex           : 2;
+  text-align     : right;
+  z-index        : 1;
+  position       : relative;
+  margin-right   : 0;
+  transition     : margin-right 0.5s;
+  letter-spacing : 1px;
+  font-weight    : bold;
+  .history__container--income & {
+    color : $green-color;
+  }
+  .history__container--expenses & {
+    color : $red-color;
+  }
+}
+.history__item_badge {
+  margin-left      : 10px;
+  flex             : 0.5;
+  background-color : rgba($red-color, 0.12);
+  padding          : 3px 6px;
+  border-radius    : 2px;
+  font-size        : 0.8rem;
+  text-align       : center;
+  vertical-align   : middle;
+}
+.history__item_remove {
+  color      : $red-color;
+  display    : block;
+  position   : absolute;
+  right      : 15px;
+  top        : 50%;
+  transform  : translateY(-50%);
+  cursor     : pointer;
+  visibility : hidden;
+  transition : visibility .1s;
+  &:before {
+    content     : "\f1f8";
+    font-family : "Font Awesome 5 Free", sans-serif;
+    font-weight : 900;
+  }
+}
