@@ -1,9 +1,11 @@
 div.container
   div.row
     div.col-2
+      mixin formSelect(typeValue, typeCondition)
+        option(value= typeValue)= typeCondition
       select.form_input.form_input--type
-        each condition in ['+', '-']
-          option= condition
+        +formSelect('inc','+')
+        +formSelect('exp','-')
     div.col-6
       input.form_input.form_input--description(
         type='text'
