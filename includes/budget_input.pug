@@ -1,17 +1,17 @@
 div.container
   div.row
     div.col-2
-      select.form_input
+      select.form_input.form_input--type
         each condition in ['+', '-']
           option= condition
     div.col-6
-      input.form_input(
+      input.form_input.form_input--description(
         type='text'
         value=''
-        placeholder='Title'
+        placeholder='Description'
       )
     div.col-3
-      input.form_input(
+      input.form_input.form_input--value(
         type='text'
         value=''
         placeholder='Value'
