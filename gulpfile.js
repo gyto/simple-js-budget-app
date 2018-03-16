@@ -44,7 +44,10 @@ gulp.task('javascript', function (callback) {
     pump([
         gulp.src(path.SRC + folder.js + '**/*.js'),
         uglify(),
-        gulp.dest(path.BUILDAssets + folder.js)
+        gulp.dest(path.BUILDAssets + folder.js),
+        browserSync.reload({
+            stream: true
+        })
     ], callback);
 });
 
@@ -52,7 +55,10 @@ gulp.task('pug', function (callback) {
    pump([
        gulp.src(path.SRC + folder.pug + '*.pug'),
        pug({}),
-       gulp.dest(path.BUILD + '/')
+       gulp.dest(path.BUILD + '/'),
+       browserSync.reload({
+           stream: true
+       })
    ], callback);
 });
 
