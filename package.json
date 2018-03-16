@@ -17,7 +17,14 @@
   },
   "homepage": "https://github.com/GYTO/simple-js-budget-app#readme",
   "devDependencies": {
-    "gulp": "^3.9.1"
+    "browser-sync": "^2.23.6",
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^3.9.3",
+    "gulp-sass": "^3.1.0",
+    "gulp-uglify": "^3.0.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "gulp-pug": "^3.3.0",
+    "pump": "^3.0.0"
+  }
 }
