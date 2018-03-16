@@ -1,0 +1,23 @@
+{
+  "name": "budget-app",
+  "version": "1.0.0",
+  "description": "simple app for budget management",
+  "main": "gruntfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GYTO/simple-js-budget-app.git"
+  },
+  "author": "Roman Kovtun",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GYTO/simple-js-budget-app/issues"
+  },
+  "homepage": "https://github.com/GYTO/simple-js-budget-app#readme",
+  "devDependencies": {
+    "grunt": "^1.0.2",
+    "grunt-contrib-jshint": "^1.1.0"
+  }
+}
