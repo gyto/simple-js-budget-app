@@ -7,6 +7,6 @@
 *.iml
 out
 gen
-assets/maps/
+src/maps/
 node_modules/
 package-lock.json
