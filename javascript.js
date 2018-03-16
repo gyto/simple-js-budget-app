@@ -126,7 +126,8 @@ var UIController = (function () {
         budgetLabel: '.main_budget',
         incomeLabel: '.badge--income .badge__number',
         expensesLabel: '.badge--expenses .badge__number',
-        percentageLabel: '.badge--expenses .badge__percentage'
+        percentageLabel: '.badge--expenses .badge__percentage',
+        container: '.history'
     };
 
     return {
@@ -144,10 +145,10 @@ var UIController = (function () {
             // create HTML
             if (type === 'inc') {
                 element = DOMstrings.incomeContainer;
-                html = '<div class="history__item" id="income-%id%"><div class="history__item_title">%description%</div><div class="history__item_amount">%value%</div><div class="history__item_remove"></div></div>';
+                html = '<div class="history__item" id="inc-%id%"><div class="history__item_title">%description%</div><div class="history__item_amount">%value%</div><div class="history__item_remove"></div></div>';
             } else if (type === 'exp') {
                 element = DOMstrings.expensesContainer;
-                html = '<div class="history__item" id="expense-%id%"><div class="history__item_title">%description%</div><div class="history__item_amount">%value%<span class="history__item_badge">20%</span></div><div class="history__item_remove"></div></div>';
+                html = '<div class="history__item" id="exp-%id%"><div class="history__item_title">%description%</div><div class="history__item_amount">%value%<span class="history__item_badge">20%</span></div><div class="history__item_remove"></div></div>';
             }
 
             // replace the placeholder text with data
@@ -211,6 +212,9 @@ var controller = (function (budgetCtrl, UICtrl) {
                 ctrlAddItem();
             }
         });
+
+        document.querySelector(DOM.container).addEventListener('click', ctrlDeleteItem);
+
     };
 
     var updateBudget = function () {
@@ -246,15 +250,38 @@ var controller = (function (budgetCtrl, UICtrl) {
 
     };
 
+    var ctrlDeleteItem = function (event) {
+        var itemID, splitID, type, ID;
+
+        itemID = event.target.parentNode.id;
+
+        if (itemID) {
+            splitID = itemID.split('-');
+            type = splitID[0];
+            ID = splitID[1];
+
+            // delete item from js
+
+
+            // delete item from UI
+
+
+            // delete from budget and update ui again
+
+        }
+    };
+
     return {
         init: function () {
             console.log('App is running');
+
             UICtrl.displayBudget({
                 budget: 0,
                 totalInc: 0,
                 totalExp: 0,
                 percentage: -1
             });
+
             setupEventListeners();
         }
     }
