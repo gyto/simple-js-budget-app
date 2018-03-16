@@ -17,14 +17,7 @@
   },
   "homepage": "https://github.com/GYTO/simple-js-budget-app#readme",
   "devDependencies": {
-    "grunt": "^1.0.2",
-    "grunt-contrib-jshint": "^1.1.0",
-    "grunt-contrib-nodeunit": "^1.0.0",
-    "grunt-contrib-uglify": "^3.3.0",
-    "grunt-contrib-watch": "^1.0.0"
+    "gulp": "^3.9.1"
   },
-  "dependencies": {
-    "grunt-sass": "^2.1.0",
-    "node-sass": "^4.7.2"
-  }
+  "dependencies": {}
 }
