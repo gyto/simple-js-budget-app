@@ -72,7 +72,7 @@
   border-radius: 3px; }
   .form_input:focus {
     outline: 0;
-    border-color: gray; }
+    border-color: #0d8433; }
 
 .form_button {
   width: 100%;
@@ -129,7 +129,8 @@
   margin-right: 0;
   transition: margin-right 0.5s;
   letter-spacing: 1px;
-  font-weight: bold; }
+  font-weight: bold;
+  background-color: #f4f4f4; }
   .history__container--income .history__item_amount {
     color: #0d8433; }
   .history__container--expenses .history__item_amount {

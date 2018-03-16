@@ -6,7 +6,7 @@
   border-radius : 3px;
   &:focus {
     outline      : 0;
-    border-color : gray;
+    border-color : $green-color;
   }
 }
 .form_button {

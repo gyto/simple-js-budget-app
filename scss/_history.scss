@@ -41,14 +41,15 @@
   flex : 4;
 }
 .history__item_amount {
-  flex           : 2;
-  text-align     : right;
-  z-index        : 1;
-  position       : relative;
-  margin-right   : 0;
-  transition     : margin-right 0.5s;
-  letter-spacing : 1px;
-  font-weight    : bold;
+  flex             : 2;
+  text-align       : right;
+  z-index          : 1;
+  position         : relative;
+  margin-right     : 0;
+  transition       : margin-right 0.5s;
+  letter-spacing   : 1px;
+  font-weight      : bold;
+  background-color : #f4f4f4;
   .history__container--income & {
     color : $green-color;
   }
