@@ -221,7 +221,17 @@ var UIController = (function () {
         },
 
         displayPercentages: function (percentages) {
-            var fields = document.querySelectorAll(DOMstrings.expensesPercLabel)
+            var fields = document.querySelectorAll(DOMstrings.expensesPercLabel);
+
+            var nodeListForEach = function (list, callback) {
+              for (var i = 0; i < list.length; i++) {
+                  callback(list[i], i);
+              }
+            };
+
+            nodeListForEach(fields, function (current, index) {
+                current.textPercentage = percentages[index] + "%";
+            });
         },
 
         getDOMstrings: function () {
