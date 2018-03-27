@@ -9,8 +9,8 @@ var browserSync = require('browser-sync').create();
 
 var path = {
     SRC: './src',
-    BUILD: './build',
-    BUILDAssets: './build/assets'
+    BUILD: './docs',
+    BUILDAssets: './docs/assets'
 };
 var folder = {
     css: '/css',
