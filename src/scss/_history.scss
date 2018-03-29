@@ -3,7 +3,7 @@
   margin-bottom : 60px;
 }
 .history__title {
-  font-size      : 2rem;
+  font-size      : 1.4rem;
   margin-bottom  : 15px;
   text-transform : uppercase;
   &--income {
@@ -21,7 +21,7 @@
   width            : 100%;
   border-top       : 1px solid rgba(gray, 0.3);
   display          : flex;
-  font-size        : 1.3rem;
+  font-size        : 1rem;
   position         : relative;
   background-color : rgba(gray, 0.09);
   padding          : 10px 15px;
@@ -55,7 +55,7 @@
   .history__container--expenses & {
     color : $red-color;
   }
-  @media (min-width : 576px) {
+  @include break(sm) {
     margin-right : 0;
     transition   : margin-right 0.5s;
   }
@@ -84,7 +84,7 @@
     font-family : "Font Awesome 5 Free", sans-serif;
     font-weight : 900;
   }
-  @media (min-width : 576px) {
+  @include break(sm) {
     visibility : hidden;
     transition : visibility .1s;
   }

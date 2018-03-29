@@ -6,7 +6,7 @@
   margin-top    : 10px;
   color         : white;
   border-radius : 3px;
-  font-size : 1.3rem;
+  font-size : 1rem;
   &--income {
     background-color : $green-color;
   }
@@ -25,9 +25,9 @@
 .badge__percentage {
   flex             : 0.5;
   background-color : darken($red-color, 12%);
-  padding          : 3px 6px;
+  padding          : 0 6px;
   border-radius    : 2px;
-  font-size        : 0.8rem;
+  font-size        : 0.8em;
   text-align       : center;
   &:empty {
     background : none;
