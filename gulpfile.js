@@ -4,7 +4,10 @@ var gulp = require('gulp'),
     uglify = require('gulp-uglify'),
     pump = require('pump'),
     pug = require('gulp-pug'),
-    imagemin = require('gulp-imagemin');
+    imagemin = require('gulp-imagemin'),
+    jeditor = require("gulp-json-editor"),
+    realFavicon = require ('gulp-real-favicon'),
+    fs = require('fs');
 
 var browserSync = require('browser-sync').create();
 
@@ -18,7 +21,8 @@ var folder = {
     scss: '/scss/',
     js: '/js/',
     pug: '/pug/',
-    images: '/images/'
+    images: '/images/',
+    favicon: '/favicon/'
 };
 
 gulp.task('browserSync', function () {
@@ -68,6 +72,7 @@ gulp.task('pug', function (callback) {
    pump([
        gulp.src(path.SRC + folder.pug + '*.pug'),
        pug({}),
+       realFavicon.injectFaviconMarkups(JSON.parse(fs.readFileSync(FAVICON_DATA_FILE)).favicon.html_code),
        gulp.dest(path.BUILD + '/'),
        browserSync.reload({
            stream: true
@@ -85,6 +90,78 @@ gulp.task('images', function (callback) {
         imagemin(),
         gulp.dest(path.BUILDAssets + folder.images)
     ], callback)
+});
+
+/*
+ *  Task for favicon creation
+ */
+
+var FAVICON_DATA_FILE = 'faviconData.json';
+
+gulp.task('generate-favicon', function(done) {
+    realFavicon.generateFavicon({
+        masterPicture: path.SRC + folder.favicon + 'favicon.png',
+        dest: path.BUILDAssets + folder.favicon,
+        iconsPath: '/assets/favicon/',
+        design: {
+            ios: {
+                pictureAspect: 'noChange',
+                assets: {
+                    ios6AndPriorIcons: false,
+                    ios7AndLaterIcons: false,
+                    precomposedIcons: false,
+                    declareOnlyDefaultIcon: true
+                }
+            },
+            desktopBrowser: {},
+            windows: {
+                pictureAspect: 'noChange',
+                backgroundColor: '#da532c',
+                onConflict: 'override',
+                assets: {
+                    windows80Ie10Tile: false,
+                    windows10Ie11EdgeTiles: {
+                        small: false,
+                        medium: true,
+                        big: false,
+                        rectangle: false
+                    }
+                }
+            },
+            androidChrome: {
+                pictureAspect: 'noChange',
+                themeColor: '#da532c',
+                manifest: {
+                    name: 'Simple Budget App',
+                    shortName: 'Budget App',
+                    startUrl: '/',
+                    display: 'standalone',
+                    orientation: 'notSet',
+                    onConflict: 'override',
+                    declared: true
+                },
+                assets: {
+                    legacyIcon: false,
+                    lowResolutionIcons: false
+                }
+            },
+            safariPinnedTab: {
+                pictureAspect: 'blackAndWhite',
+                threshold: 40.625,
+                themeColor: '#da532c'
+            }
+        },
+        settings: {
+            scalingAlgorithm: 'Mitchell',
+            errorOnImageTooSmall: false,
+            readmeFile: false,
+            htmlCodeFile: false,
+            usePathAsIs: false
+        },
+        markupFile: FAVICON_DATA_FILE
+    }, function() {
+        done();
+    });
 });
 
 /*

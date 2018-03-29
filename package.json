@@ -4,7 +4,8 @@
   "description": "simple app for budget management",
   "main": "gruntfile.js",
   "scripts": {
-    "start": "gulp"
+    "start": "gulp",
+    "build": "gulp generate-favicon && gulp"
   },
   "repository": {
     "type": "git",
@@ -18,9 +19,12 @@
   "homepage": "https://github.com/GYTO/simple-js-budget-app#readme",
   "devDependencies": {
     "browser-sync": "^2.23.6",
+    "fs": "0.0.1-security",
     "gulp": "^3.9.1",
     "gulp-clean-css": "^3.9.3",
     "gulp-imagemin": "^4.1.0",
+    "gulp-json-editor": "^2.3.0",
+    "gulp-real-favicon": "^0.2.2",
     "gulp-sass": "^3.2.1",
     "gulp-uglify": "^3.0.0"
   },
