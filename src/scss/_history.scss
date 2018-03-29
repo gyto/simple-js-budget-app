@@ -45,8 +45,7 @@
   text-align       : right;
   z-index          : 1;
   position         : relative;
-  margin-right     : 0;
-  transition       : margin-right 0.5s;
+  margin-right     : 30px;
   letter-spacing   : 1px;
   font-weight      : bold;
   background-color : #f4f4f4;
@@ -55,6 +54,10 @@
   }
   .history__container--expenses & {
     color : $red-color;
+  }
+  @media (min-width : 576px) {
+    margin-right : 0;
+    transition   : margin-right 0.5s;
   }
 }
 .history__item_badge {
@@ -75,11 +78,14 @@
   top        : 50%;
   transform  : translateY(-50%);
   cursor     : pointer;
-  visibility : hidden;
-  transition : visibility .1s;
+  visibility : visible;
   &:before {
     content     : "\f1f8";
     font-family : "Font Awesome 5 Free", sans-serif;
     font-weight : 900;
+  }
+  @media (min-width : 576px) {
+    visibility : hidden;
+    transition : visibility .1s;
   }
 }

@@ -18,8 +18,7 @@ var folder = {
     scss: '/scss/',
     js: '/js/',
     pug: '/pug/',
-    images: '/images/',
-    vendors: '/vendors/'
+    images: '/images/'
 };
 
 gulp.task('browserSync', function () {
@@ -77,15 +76,6 @@ gulp.task('pug', function (callback) {
 });
 
 /*
- *  Task to move vendor CSS files
- */
-
-gulp.task('vendors', function () {
-   return gulp.src(path.SRC + folder.vendors + '/*.css')
-       .pipe(gulp.dest(path.BUILDAssets + folder.css))
-});
-
-/*
  *  Task to minimize Images and moving to docs folder
  */
 
@@ -101,10 +91,10 @@ gulp.task('images', function (callback) {
  *  Task for watches
  */
 
-gulp.task('watch', ['browserSync', 'sass', 'javascript', 'pug', 'vendors'], function () {
+gulp.task('watch', ['browserSync', 'sass', 'javascript', 'pug'], function () {
     gulp.watch(path.SRC + folder.scss + '**/*.scss', ['sass']);
     gulp.watch(path.SRC + folder.js + '**/*.js', ['javascript']);
     gulp.watch(path.SRC + folder.pug + '**/*.pug', ['pug']);
 });
 
-gulp.task('default', ['watch', 'sass', 'pug', 'vendors', 'images']);
+gulp.task('default', ['watch', 'sass', 'pug', 'images']);

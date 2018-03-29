@@ -2,8 +2,10 @@
   font-size   : 12px;
   font-family : 'Mina', sans-serif;
 }
-@import "colors",
+@import "reboot",
+        "grid",
+        "colors",
         "badge",
         "main",
         "form_input",
-"history";
+        "history";

@@ -4,9 +4,13 @@
   border        : 1px solid rgba(gray, 0.5);
   padding       : 6px;
   border-radius : 3px;
+  margin-bottom : 10px;
   &:focus {
     outline      : 0;
     border-color : $green-color;
+  }
+  @media (min-width : 576px) {
+    margin-bottom : 0;
   }
 }
 .form_button {
@@ -19,6 +23,9 @@
   cursor           : pointer;
   background-color : $green-color;
   border-radius    : 3px;
+  span {
+    display: none;
+  }
   &:focus {
     outline : 0;
   }
