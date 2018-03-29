@@ -4,7 +4,7 @@
   "description": "simple app for budget management",
   "main": "gruntfile.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "gulp"
   },
   "repository": {
     "type": "git",
@@ -20,6 +20,7 @@
     "browser-sync": "^2.23.6",
     "gulp": "^3.9.1",
     "gulp-clean-css": "^3.9.3",
+    "gulp-imagemin": "^4.1.0",
     "gulp-sass": "^3.2.1",
     "gulp-uglify": "^3.0.0"
   },
