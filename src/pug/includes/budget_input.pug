@@ -1,24 +1,43 @@
 div.container
   div.row
     div.col-12.col-sm-2.col-lg-1
+      label(
+        hidden
+        for='typeInput'
+        aria-label='Type of Spending'
+      ) Type
       mixin formSelect(typeValue, typeCondition)
         option(value= typeValue)= typeCondition
-      select.form_input.form_input--type
+      select.form_input.form_input--type#typeInput
         +formSelect('inc','+')
         +formSelect('exp','-')
     div.col-12.col-sm-5.col-lg-6
-      input.form_input.form_input--description(
+      label(
+        hidden
+        for='descInput'
+        aria-label='Description'
+      ) Description
+      input.form_input.form_input--description#descInput(
         type='text'
         value=''
         placeholder='Description'
       )
     div.col-12.col-sm-3
-      input.form_input.form_input--value(
+      label(
+        hidden
+        for='valueInput'
+        aria-label='Value'
+      ) Value
+      input.form_input.form_input--value#valueInput(
         type='text'
         value=''
         placeholder='Value'
       )
     div.col-12.col-sm-2
-      button.form_button
-        span Add
-        i.far.fa-check-circle
+      button.form_button(
+        aria-label='Add Value'
+      )
+        span Add Value
+        i.far.fa-check-circle(
+          aria-hidden='true'
+        )
