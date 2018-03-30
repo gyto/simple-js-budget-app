@@ -23,12 +23,12 @@
     "gulp": "^3.9.1",
     "gulp-clean-css": "^3.9.3",
     "gulp-imagemin": "^4.1.0",
-    "gulp-json-editor": "^2.3.0",
     "gulp-real-favicon": "^0.2.2",
     "gulp-sass": "^3.2.1",
     "gulp-uglify": "^3.0.0"
   },
   "dependencies": {
+    "gulp-htmlmin": "^4.0.0",
     "gulp-pug": "^3.3.0",
     "pump": "^3.0.0"
   }

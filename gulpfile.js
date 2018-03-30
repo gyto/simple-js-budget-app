@@ -5,9 +5,9 @@ var gulp = require('gulp'),
     pump = require('pump'),
     pug = require('gulp-pug'),
     imagemin = require('gulp-imagemin'),
-    jeditor = require("gulp-json-editor"),
     realFavicon = require ('gulp-real-favicon'),
-    fs = require('fs');
+    fs = require('fs'),
+    htmlmin = require('gulp-htmlmin');
 
 var browserSync = require('browser-sync').create();
 
@@ -73,6 +73,9 @@ gulp.task('pug', function (callback) {
        gulp.src(path.SRC + folder.pug + '*.pug'),
        pug({}),
        realFavicon.injectFaviconMarkups(JSON.parse(fs.readFileSync(FAVICON_DATA_FILE)).favicon.html_code),
+       htmlmin({
+          collapseWhitespace: true
+       }),
        gulp.dest(path.BUILD + '/'),
        browserSync.reload({
            stream: true
