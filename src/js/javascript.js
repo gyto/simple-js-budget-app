@@ -13,7 +13,7 @@ var budgetController = (function () {
 
     Expense.prototype.calcPercentage = function (totalIncome) {
         if(totalIncome > 0) {
-            this.percentage = Math.round((this.value / totalIncome) * 100)
+            this.percentage = Math.round((this.value / totalIncome) * 100);
         } else {
             this.percentage = -1;
         }
@@ -105,14 +105,14 @@ var budgetController = (function () {
         },
 
         calculatePercentages: function () {
-            data.allItems.exp.forEach(function (current) {
-                current.calcPercentage(data.totals.inc)
+            data.allItems.exp.forEach(function (cur) {
+                cur.calcPercentage(data.totals.inc)
             })
         },
 
         getPercentages: function () {
-            var allPerc = data.allItems.exp.map(function (current) {
-                return current.getPercentage();
+            var allPerc = data.allItems.exp.map(function (cur) {
+                return cur.getPercentage();
             });
 
             return allPerc;
@@ -152,7 +152,7 @@ var UIController = (function () {
         expensesLabel: '.badge--expenses .badge__number',
         percentageLabel: '.badge--expenses .badge__percentage',
         container: '.history',
-        expensesPercLabel: '.badge--expenses .history__item_badge'
+        expensesPercLabel: '.history__item_badge'
     };
 
     return {
@@ -230,7 +230,11 @@ var UIController = (function () {
             };
 
             nodeListForEach(fields, function (current, index) {
-                current.textPercentage = percentages[index] + "%";
+                if (percentages[index] > 0) {
+                    current.textContent = percentages[index] + "%";
+                } else {
+                    current.textContent = "---";
+                }
             });
         },
 
@@ -281,6 +285,7 @@ var controller = (function (budgetCtrl, UICtrl) {
         var percentages = budgetCtrl.getPercentages();
 
         // update the UI
+        UICtrl.displayPercentages(percentages);
         console.log(percentages);
     };
 
