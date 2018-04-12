@@ -12,6 +12,9 @@
   @include break(sm) {
     margin-bottom: 0;
   }
+  &.exp:focus {
+    border-color: $red-color;
+  }
 }
 .form_button {
   width            : 100%;
@@ -28,5 +31,8 @@
   }
   &:focus {
     outline : 0;
+  }
+  &.exp {
+    background-color: $red-color;
   }
 }
